@@ -1,0 +1,21 @@
+# first unzip 14CS01038_assignment_1.zip
+$ unzip 14CS01038_assignment_1.zip
+
+# go into 14CS01038_assignment_1
+$ cd 14CS01038_assignment_1
+
+# 'a' is the executable file which needs to pass filename, filename passed is 'test'
+$ ./a test
+# this prints the points of convex object that includes all convex objects given in input.
+
+
+# you can edit 'test' file and give different inputs
+# How to give inputs in 'test' file....?
+# first line of 'test' file contain  an integer 'n' denoting the no of  convex objects.
+# each of n successive objects is described as follows.
+# first line contains an integer 'm' denoting the no of points in convex objects.
+# 'm' successive lines for each object contains co-ordinate 'xi' 'yi'.
+# see the test file for more clearification.
+
+
+

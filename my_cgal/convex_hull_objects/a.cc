@@ -1,12 +1,67 @@
 #include<bits/stdc++.h>
-#include"cgal_basic.cc"
 using namespace std;
+
+#define F first
+#define S second
+#define mp make_pair
+#define pb push_back
+
+template<typename T> using point = pair<T,T>;
+
 
 //Each convex_hull object is list of points (x0,y0),(x1,y1),(x2,y2),...(xn,yn),(x0,y0).
 typedef vector<point<double> >  ch_obj;
-bool cmp(point<double> p1, point<double> p2){
-		return p1.F < p2.F;
+
+
+template<typename T>
+int Rotation(point<T> p1, point<T> p2, point<T> p3){
+	//printf("Checking rotation of {%d,%d} {%d,%d} {%d,%d}...\n",p1.F,p1.S,p2.F,p2.S,p3.F,p3.S);
+	auto x1 = p1.F - p2.F, y1 = p1.S-p2.S;
+	auto x2 = p3.F - p2.F, y2 = p3.S-p2.S;
+	auto r = (x1*y2 - x2*y1);
+	if(r > 0) return 1; // p1,p2,p3 in clockwise direction...
+	else if(r < 0) return -1;// p1,p2,p3 in anti-clockwise direction...
+	else return 0; //collinear points....
 }
+
+template<typename T>
+void convex_hull(vector<point<T> > &v, vector<point<T> > &cv){
+	int n = v.size();
+	if(n == 1){cv.pb(v[0]); return; }
+	cv.pb(v[0]);
+	cv.pb(v[1]);
+	int i = 2;
+	while(i<n){
+		int n1 = cv.size();
+		if(n1 == 1) {cv.pb(v[i]);i++; continue;}
+		if(Rotation(cv[n1-2],cv[n1-1],v[i]) == 1){cv.pb(v[i]);i++; continue;}
+		else{
+			auto it = cv.end();
+			it--;
+			//printf("{%d,%d} deleted...\n",it->F,it->S);
+			cv.erase(it);
+		}
+	}
+	
+	vector<point<T> > rv;
+	rv.pb(v[0]);
+	rv.pb(v[1]);
+	i = 2;
+	while(i<n){
+		int n1 = rv.size();
+		if(n1==1){rv.pb(v[i]);i++; continue;}
+		if(Rotation(rv[n1-2],rv[n1-1],v[i]) == -1){rv.pb(v[i]);i++; continue;}
+		else{
+			auto it = rv.end();
+			it--;
+			//printf("{%d,%d} deleted...\n",it->F,it->S);
+			rv.erase(it);
+		}
+	}
+	reverse(rv.begin(),rv.end());
+	cv.insert(cv.end(),rv.begin()+1,rv.end());
+} 
+
 
 void my_merge(ch_obj &o1, ch_obj &o2, ch_obj &ans){
 	ans.clear();	
@@ -23,7 +78,7 @@ void my_merge(ch_obj &o1, ch_obj &o2, ch_obj &ans){
 }
 
 void print(ch_obj &v){
-for(int i=0;i<v.size();i++)cout<<"{"<<v[i].F<<','<<v[i].S<<"} "; cout<<endl;
+	for(int i=0;i<v.size();i++) cout<<"{"<<v[i].F<<','<<v[i].S<<"} "; cout<<endl;
 }
 
 void merge_objects(vector<ch_obj> &obj_list, int l, int r, ch_obj &ans){
@@ -80,6 +135,9 @@ int main(int argc, char *argv[]){
 	}
 	fclose(fp);
 	
+	for(int i=1;i<=n;i++){ cout<<"obj:"<<i<<endl; print(obj_list[i]); cout<<endl; }
+
+	//sort the points of each objects... Complexity O(nk)
 	vector<ch_obj> sorted_obj_list;
 	sorted_obj_list.pb(ch_obj(0));
 	for(int i=1;i<=n;i++){
@@ -122,8 +180,11 @@ int main(int argc, char *argv[]){
 		sorted_obj_list.pb(ans);
 	}
 	
-	ch_obj sorted_points;
+	//merge the sorted points of each objects into one object... Complexity O(nk*log(k))
+	ch_obj sorted_points; 
 	merge_objects(sorted_obj_list,1,n,sorted_points);
+	
+	//create convex hull of sorted points....Complexity O(nk)
 	cout<<"convex hull is created.."<<endl;
 	ch_obj ans;
 	convex_hull(sorted_points,ans);
