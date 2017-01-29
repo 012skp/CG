@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+#include"cgal_basic.cc"
+using namespace std;
+
+
+int main(){
+
+point<double> p = mp(4,5);
+return 0;
+
+}
+
+
+
