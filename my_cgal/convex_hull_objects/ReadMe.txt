@@ -6,6 +6,7 @@ $ cd 14CS01038_assignment_1
 
 # 'a' is the executable file which needs to pass filename, filename passed is 'test'
 $ ./a test
+$ a.exe test
 # this prints the points of convex object that includes all convex objects given in input.
 
 
