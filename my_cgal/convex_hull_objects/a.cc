@@ -190,6 +190,10 @@ int main(int argc, char *argv[]){
 	convex_hull(sorted_points,ans);
 	print(ans);
 
+	float v1[ans.size()];
+	for(int i=0;i<ans.size();i+=2){ v1[i] = (float)ans[i].F/RANGE_MAX; v1[i+1] = (float)ans[i].F/RANGE_MAX;}
+
+
 return 0;
 }
 
