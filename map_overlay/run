@@ -1,0 +1,2 @@
+gnuplot -e "set terminal postscript enhanced eps; set output 'guifile'; load 'output'"
+gnome-open guifile

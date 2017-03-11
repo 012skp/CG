@@ -1,0 +1,47 @@
+set xrange[-1.000000:11.000000]
+set yrange[-1.000000:11.000000]
+set arrow from 7.000000,0.966667 to 2.000000,0.966667 linecolor rgb 14399800
+set arrow from 1.966667,1.000000 to 2.966667,2.000000 linecolor rgb 14399800
+set arrow from 3.000000,2.033333 to 7.000000,3.033333 linecolor rgb 14399800
+set arrow from 7.033333,3.000000 to 7.033333,1.000000 linecolor rgb 14399800
+set arrow from 2.000000,1.033333 to 7.000000,1.033333 linecolor rgb 15655688
+set arrow from 6.966667,1.000000 to 6.966667,3.000000 linecolor rgb 15655688
+set arrow from 7.000000,2.966667 to 3.000000,1.966667 linecolor rgb 15655688
+set arrow from 3.033333,2.000000 to 2.033333,1.000000 linecolor rgb 15655688
+set arrow from 10.000000,-0.033333 to 0.000000,-0.033333 linecolor rgb 4066567
+set arrow from -0.033333,0.000000 to -0.033333,10.000000 linecolor rgb 4066567
+set arrow from 0.000000,10.033333 to 10.000000,10.033333 linecolor rgb 4066567
+set arrow from 10.033333,10.000000 to 10.033333,0.000000 linecolor rgb 4066567
+set arrow from 0.000000,0.033333 to 10.000000,0.033333 linecolor rgb 2676161
+set arrow from 9.966667,0.000000 to 9.966667,10.000000 linecolor rgb 2676161
+set arrow from 10.000000,9.966667 to 0.000000,9.966667 linecolor rgb 2676161
+set arrow from 0.033333,10.000000 to 0.033333,0.000000 linecolor rgb 2676161
+set arrow from 6.000000,5.966667 to 1.000000,5.966667 linecolor rgb 14695780
+set arrow from 0.966667,6.000000 to 1.966667,9.000000 linecolor rgb 14695780
+set arrow from 2.000000,9.033333 to 5.000000,8.033333 linecolor rgb 14695780
+set arrow from 5.033333,8.000000 to 6.033333,6.000000 linecolor rgb 14695780
+set arrow from 1.000000,6.033333 to 6.000000,6.033333 linecolor rgb 14118454
+set arrow from 5.966667,6.000000 to 4.966667,8.000000 linecolor rgb 14118454
+set arrow from 5.033333,8.000000 to 1.033333,6.000000 linecolor rgb 14118454
+set arrow from 4.966667,7.966667 to 1.966667,8.966667 linecolor rgb 1270348
+set arrow from 2.033333,9.000000 to 1.033333,6.000000 linecolor rgb 1270348
+set arrow from 1.000000,6.033333 to 5.000000,8.033333 linecolor rgb 1270348
+set arrow from 8.000000,4.966667 to 6.500000,5.966667 linecolor rgb 2046516
+set arrow from 6.466667,6.000000 to 5.966667,7.000000 linecolor rgb 2046516
+set arrow from 6.000000,7.033333 to 8.000000,7.033333 linecolor rgb 2046516
+set arrow from 8.033333,7.000000 to 8.033333,5.000000 linecolor rgb 2046516
+set arrow from 6.500000,6.033333 to 8.000000,5.033333 linecolor rgb 14527562
+set arrow from 7.966667,5.000000 to 7.966667,7.000000 linecolor rgb 14527562
+set arrow from 8.000000,6.966667 to 6.000000,6.966667 linecolor rgb 14527562
+set arrow from 6.033333,7.000000 to 6.533333,6.000000 linecolor rgb 14527562
+set label "C1" at 4.500000,0.800000 rotate by -0.000000 left front
+set label "C2" at 2.700000,1.500000 rotate by 45.022793 left front
+set label "C3" at 5.000000,-0.200000 rotate by -0.000000 left front
+set label "C4" at 5.000000,9.800000 rotate by -0.000000 left front
+set label "C5" at 3.500000,5.800000 rotate by -0.000000 left front
+set label "C6" at 3.200000,7.000000 rotate by 26.578506 left front
+set label "C7" at 1.700000,7.500000 rotate by 71.601299 left front
+set label "C8" at 6.050000,6.500000 rotate by -63.467079 left front
+set label "C9" at 7.000000,6.800000 rotate by -0.000000 left front
+set label "C(INF)" at -1.000000,5.000000 front
+plot NaN t ''	
