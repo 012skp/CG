@@ -5,7 +5,7 @@
 #define mp make_pair
 #define KCYN  "\x1B[31m"
 #define KWHT  "\x1B[37m"
-int edges_too = 1;
+int edges_too = 0;
 double x_min=INT_MAX,x_max=-1,y_min=INT_MAX,y_max=-1;
 class edge_record{
 public:
@@ -267,7 +267,7 @@ void print_half_edge_list(vector<edge_record> &edge_list){
 }
 
 int main(int argc, char* argv[]){
-	if(argc < 2){printf("usage %s <input_file>\n",argv[0]); exit(1);}
+	if(argc < 2){printf("usage %s <input_file> [<edge_names(1/0)>]\n",argv[0]); exit(1);}
 	if(argc == 3) edges_too = atoi(argv[2]);
 	srand(time(NULL)); //seed random numbers...
 	printf("%d\n",getpid());
