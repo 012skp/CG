@@ -156,11 +156,10 @@ void find_face_graph(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 	for(int i=1;i<cycle_list.size();i++){
 		if(!cycle_list[i].conf){ // graph from outer cycles only...
 				int eptr = cycle_list[i].left_most_eptr;
-				int c_cno = i;
 				set<int> twin_cycles; //contains all adjacent interior cycles.
 				int t_eptr = edge_list[eptr].l_next;
 				twin_cycles.insert(edge_list[edge_list[eptr].l_].cycle_no);
-				while(t_eptr != eptr){
+				while(t_eptr != eptr){ //pickup all twin cycles....
 					twin_cycles.insert(edge_list[edge_list[t_eptr].l_].cycle_no);
 					t_eptr = edge_list[t_eptr].l_next;
 				}
@@ -171,11 +170,12 @@ void find_face_graph(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 				p2.y = p1.y;
 				Line l1 = {p1,p2};
 				double dist = INT_MAX;
-				vector<pair<double,int> > lines_intersecting;
+				set<pair<double,int> > lines_intersecting;
+				vector<int> count_of_cycles(cycle_list.size(),0);
 				//find half edges intersecting to this horizontal line....
 				for(int j=1;j<edge_list.size();j++){
 					// No need to check half edges form current cycle or twin cycle...
-					if(edge_list[j].cycle_no == c_cno || twin_cycles.find(edge_list[j].cycle_no)!=twin_cycles.end()) continue;
+					if(edge_list[j].cycle_no == i || twin_cycles.find(edge_list[j].cycle_no)!=twin_cycles.end()) continue;
 					p3.x = edge_list[j].l.v1.x;
 					p3.y = edge_list[j].l.v1.y;
 					p4.x = edge_list[j].l.v2.x;
@@ -189,35 +189,43 @@ void find_face_graph(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 						//printf("intersecting cno = %d\n",edge_list[j].cycle_no);
 						Point p = intersection_point(l1,l2);
 						//printf("distance = %lf\n",distance(p,p1));
-						if(distance(p,p1) <= dist){
-							dist = distance(p,p1);
-							lines_intersecting.push_back(mp(dist,j));
+						dist = distance(p,p1);
+						lines_intersecting.insert(mp(dist,j));
+						if(lines_intersecting.size()>2){
+							auto it = lines_intersecting.end();
+							it--;
+							lines_intersecting.erase(it);
 						}
+						count_of_cycles[edge_list[j].cycle_no]++;
 					}
 				}
-				if(lines_intersecting.size() == 2){
-					sort(lines_intersecting.begin(),lines_intersecting.end());
-					lines_intersecting.resize(2);
-					for(int ii=0;ii<2;ii++){  // connect to inner cycle...
-						int cno = edge_list[lines_intersecting[ii].second].cycle_no;
-						//printf("two edges intersecting for %d cycle_no to %d cycle_no\n",i,cno );
+
+				if(lines_intersecting.size()>=2){ //if there were some edges intersecting the horizontal line..
+					int cno = edge_list[lines_intersecting.begin()->second].cycle_no; // checkout first one...
+					if(count_of_cycles[cno] == 1){ // if only 1 intersection to that cycle connect its innercycle...
 						if(cycle_list[cno].conf == 1){
 							cycle_list[i].parent_cycle = cno;
 							cycle_list[cno].child_cycle.pb(i);
-							break;
 						}
-					}
-				}
-				else if(lines_intersecting.size() > 2){
-					sort(lines_intersecting.begin(),lines_intersecting.end());
-					lines_intersecting.resize(2);
-					for(int ii=0;ii<2;ii++){  // connect to inner cycle...
-						int cno = edge_list[lines_intersecting[ii].second].cycle_no;
-						//printf("two edges intersecting for %d cycle_no to %d cycle_no\n",i,cno );
-						if(cycle_list[cno].conf == 0){
+						else{ // pickup the second edge that will be innercycle.....
+							auto it = lines_intersecting.begin();
+							it++;
+							cno = edge_list[it->second].cycle_no;
 							cycle_list[i].parent_cycle = cno;
 							cycle_list[cno].child_cycle.pb(i);
-							break;
+						}
+					}
+					else{ // if the cycle is intersected more than 1 time then select outercycle...
+						if(cycle_list[cno].conf == 0){ // still checking first half_edge for begin outercycle...
+							cycle_list[i].parent_cycle = cno;
+							cycle_list[cno].child_cycle.pb(i);
+						}
+						else{ // pickup the second edge that will be outercycle...
+							auto it = lines_intersecting.begin();
+							it++;
+							cno = edge_list[it->second].cycle_no;
+							cycle_list[i].parent_cycle = cno;
+							cycle_list[cno].child_cycle.pb(i);
 						}
 					}
 				}

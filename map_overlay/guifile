@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: guifile
 %%Creator: gnuplot 4.6 patchlevel 6
-%%CreationDate: Sat Mar 11 13:14:43 2017
+%%CreationDate: Sat Mar 11 16:03:03 2017
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 410 302
 %%EndComments
@@ -461,7 +461,7 @@ SDict begin [
   /Author (shailesh)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Sat Mar 11 13:14:43 2017)
+  /CreationDate (Sat Mar 11 16:03:03 2017)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -610,7 +610,7 @@ Z stroke
 1.000 UP
 1.000 UL
 LTb
-0.09 0.71 0.29 C 2204 1064 M
+0.35 0.43 0.98 C 2204 1064 M
 -121 -32 V
 121 -32 V
 2581 32 R
@@ -624,7 +624,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.09 0.71 0.29 C 2526 1332 M
+0.35 0.43 0.98 C 2526 1332 M
 80 96 V
 -118 -43 V
 2065 1045 M
@@ -638,7 +638,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.09 0.71 0.29 C 4671 1770 M
+0.35 0.43 0.98 C 4671 1770 M
 114 53 V
 -125 10 V
 2624 1441 M
@@ -652,7 +652,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.09 0.71 0.29 C 4771 1166 M
+0.35 0.43 0.98 C 4771 1166 M
 32 -121 V
 32 121 V
 -32 644 R
@@ -666,7 +666,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.18 0.55 0.25 C 4664 1026 M
+0.41 0.44 0.30 C 4664 1026 M
 121 32 V
 -121 32 V
 2083 1058 M
@@ -680,7 +680,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.18 0.55 0.25 C 4799 1689 M
+0.41 0.44 0.30 C 4799 1689 M
 -32 121 V
 -32 -121 V
 32 -644 R
@@ -694,7 +694,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.18 0.55 0.25 C 2738 1468 M
+0.41 0.44 0.30 C 2738 1468 M
 -114 -53 V
 125 -10 V
 2036 393 R
@@ -708,7 +708,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.18 0.55 0.25 C 2181 1141 M
+0.41 0.44 0.30 C 2181 1141 M
 -80 -96 V
 118 43 V
 423 340 R
@@ -722,7 +722,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.36 0.69 0.92 C 1123 682 M
+0.27 0.29 0.56 C 1123 682 M
 1002 650 L
 121 -32 V
 5284 32 R
@@ -736,7 +736,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.36 0.69 0.92 C 1016 4367 M
+0.27 0.29 0.56 C 1016 4367 M
 -32 121 V
 952 4367 L
 984 663 M
@@ -750,7 +750,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.36 0.69 0.92 C 6286 4469 M
+0.27 0.29 0.56 C 6286 4469 M
 121 32 V
 -121 32 V
 1002 4501 M
@@ -764,7 +764,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.36 0.69 0.92 C 6393 784 M
+0.27 0.29 0.56 C 6393 784 M
 32 -121 V
 32 121 V
 -32 3704 R
@@ -778,7 +778,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.96 0.44 0.40 C 6286 643 M
+0.71 0.11 0.99 C 6286 643 M
 121 32 V
 -121 32 V
 1002 675 M
@@ -792,7 +792,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.96 0.44 0.40 C 6421 4367 M
+0.71 0.11 0.99 C 6421 4367 M
 -32 121 V
 -32 -121 V
 6389 663 M
@@ -806,7 +806,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.96 0.44 0.40 C 1123 4508 M
+0.71 0.11 0.99 C 1123 4508 M
 -121 -32 V
 121 -32 V
 5284 32 R
@@ -820,7 +820,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.96 0.44 0.40 C 988 784 M
+0.71 0.11 0.99 C 988 784 M
 32 -121 V
 32 121 V
 -32 3704 R
@@ -834,7 +834,7 @@ stroke
 grestore
 1.000 UL
 LTb
-1.00 0.77 0.89 C 1664 2977 M
+0.41 0.19 0.08 C 1664 2977 M
 -121 -32 V
 121 -32 V
 2581 32 R
@@ -848,7 +848,7 @@ stroke
 grestore
 1.000 UL
 LTb
-1.00 0.77 0.89 C 2043 3982 M
+0.41 0.19 0.08 C 2043 3982 M
 22 124 V
 -81 -96 V
 1525 2958 M
@@ -862,7 +862,7 @@ stroke
 grestore
 1.000 UL
 LTb
-1.00 0.77 0.89 C 3580 3733 M
+0.41 0.19 0.08 C 3580 3733 M
 125 3 V
 -110 59 V
 2083 4119 M
@@ -876,7 +876,7 @@ stroke
 grestore
 1.000 UL
 LTb
-1.00 0.77 0.89 C 4167 3038 M
+0.41 0.19 0.08 C 4167 3038 M
 96 -80 V
 -43 118 V
 -497 647 R
@@ -890,7 +890,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.38 0.55 0.43 C 4124 2939 M
+0.10 0.16 0.47 C 4124 2939 M
 121 32 V
 -121 32 V
 1543 2971 M
@@ -904,7 +904,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.38 0.55 0.43 C 3782 3643 M
+0.10 0.16 0.47 C 3782 3643 M
 -96 80 V
 43 -118 V
 498 -647 R
@@ -918,35 +918,21 @@ stroke
 grestore
 1.000 UL
 LTb
-0.38 0.55 0.43 C 1664 3029 M
--103 -71 V
-125 9 V
-2037 756 R
-1561 2958 L
-stroke
-gsave [] 0 setdash
-1664 3029 M
--103 -71 V
-125 9 V
-stroke
-grestore
-1.000 UL
-LTb
-0.73 0.64 0.11 C 2190 4096 M
+0.10 0.16 0.47 C 2208 4096 M
 -125 -3 V
 110 -59 V
-3686 3710 M
-2065 4093 L
+3705 3710 M
+2083 4093 L
 stroke
 gsave [] 0 setdash
-2190 4096 M
+2208 4096 M
 -125 -3 V
 110 -59 V
 stroke
 grestore
 1.000 UL
 LTb
-0.73 0.64 0.11 C 1583 3082 M
+0.10 0.16 0.47 C 1583 3082 M
 -22 -124 V
 81 96 V
 459 1052 R
@@ -960,21 +946,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.73 0.64 0.11 C 3602 3665 M
-103 71 V
--125 -9 V
-1543 2971 M
-2162 765 V
-stroke
-gsave [] 0 setdash
-3602 3665 M
-103 71 V
--125 -9 V
-stroke
-grestore
-1.000 UL
-LTb
-0.21 0.52 0.06 C 4639 2923 M
+0.45 0.56 0.24 C 4639 2923 M
 -124 22 V
 96 -81 V
 715 -301 R
@@ -988,7 +960,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.21 0.52 0.06 C 4323 3261 M
+0.45 0.56 0.24 C 4323 3261 M
 -96 80 V
 43 -118 V
 227 -265 R
@@ -1002,7 +974,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.21 0.52 0.06 C 5205 3321 M
+0.45 0.56 0.24 C 5205 3321 M
 121 32 V
 -121 32 V
 -960 -32 R
@@ -1016,7 +988,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.21 0.52 0.06 C 5312 2697 M
+0.45 0.56 0.24 C 5312 2697 M
 32 -121 V
 32 121 V
 -32 644 R
@@ -1030,7 +1002,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.00 0.78 0.99 C 5203 2610 M
+0.71 0.36 0.22 C 5203 2610 M
 123 -22 V
 -96 81 V
 -715 302 R
@@ -1044,7 +1016,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.00 0.78 0.99 C 5340 3220 M
+0.71 0.36 0.22 C 5340 3220 M
 -32 121 V
 -32 -121 V
 32 -644 R
@@ -1058,7 +1030,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.00 0.78 0.99 C 4366 3360 M
+0.71 0.36 0.22 C 4366 3360 M
 -121 -32 V
 121 -32 V
 960 32 R
@@ -1072,7 +1044,7 @@ stroke
 grestore
 1.000 UL
 LTb
-0.00 0.78 0.99 C 4437 3038 M
+0.71 0.36 0.22 C 4437 3038 M
 96 -80 V
 -43 118 V
 -227 265 R
@@ -1116,23 +1088,18 @@ grestore
 2894 2882 M
 [ [(Helvetica) 140.0 0.0 true true 0 (C5)]
 ] -46.7 MLshow
-2732 3341 M
-currentpoint gsave translate 26 rotate 0 0 moveto
-[ [(Helvetica) 140.0 0.0 true true 0 (C6)]
-] -46.7 MLshow
-grestore
 1921 3532 M
 currentpoint gsave translate 71 rotate 0 0 moveto
-[ [(Helvetica) 140.0 0.0 true true 0 (C7)]
+[ [(Helvetica) 140.0 0.0 true true 0 (C6)]
 ] -46.7 MLshow
 grestore
 4272 3149 M
 currentpoint gsave translate -63 rotate 0 0 moveto
-[ [(Helvetica) 140.0 0.0 true true 0 (C8)]
+[ [(Helvetica) 140.0 0.0 true true 0 (C7)]
 ] -46.7 MLshow
 grestore
 4785 3264 M
-[ [(Helvetica) 140.0 0.0 true true 0 (C9)]
+[ [(Helvetica) 140.0 0.0 true true 0 (C8)]
 ] -46.7 MLshow
 462 2576 M
 [ [(Helvetica) 140.0 0.0 true true 0 (C\(INF\))]
