@@ -80,7 +80,7 @@ void print_gui(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 	//setting label for cycles...
 	for(int ii=1;ii<cycle_list.size();ii++){
 		int i = cycle_list[ii].left_most_eptr;
-		printf("for cycle %d left_most_eptr = %d\n",ii,i);
+		//printf("for cycle %d left_most_eptr = %d\n",ii,i);
 		double y,y_,y1,y2,x,x_,x1,x2;
 		x = edge_list[i].l.v1.x;
 		x_ = edge_list[i].l.v2.x;
