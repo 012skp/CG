@@ -1,44 +1,76 @@
-set xrange[-1.000000:11.000000]
-set yrange[-1.000000:11.000000]
-set arrow from 7.000000,0.966667 to 2.000000,0.966667 linecolor rgb 5795323
-set arrow from 1.966667,1.000000 to 2.966667,2.000000 linecolor rgb 5795323
-set arrow from 3.000000,2.033333 to 7.000000,3.033333 linecolor rgb 5795323
-set arrow from 7.033333,3.000000 to 7.033333,1.000000 linecolor rgb 5795323
-set arrow from 2.000000,1.033333 to 7.000000,1.033333 linecolor rgb 6844492
-set arrow from 6.966667,1.000000 to 6.966667,3.000000 linecolor rgb 6844492
-set arrow from 7.000000,2.966667 to 3.000000,1.966667 linecolor rgb 6844492
-set arrow from 3.033333,2.000000 to 2.033333,1.000000 linecolor rgb 6844492
-set arrow from 10.000000,-0.033333 to 0.000000,-0.033333 linecolor rgb 4475534
-set arrow from -0.033333,0.000000 to -0.033333,10.000000 linecolor rgb 4475534
-set arrow from 0.000000,10.033333 to 10.000000,10.033333 linecolor rgb 4475534
-set arrow from 10.033333,10.000000 to 10.033333,0.000000 linecolor rgb 4475534
-set arrow from 0.000000,0.033333 to 10.000000,0.033333 linecolor rgb 11803645
-set arrow from 9.966667,0.000000 to 9.966667,10.000000 linecolor rgb 11803645
-set arrow from 10.000000,9.966667 to 0.000000,9.966667 linecolor rgb 11803645
-set arrow from 0.033333,10.000000 to 0.033333,0.000000 linecolor rgb 11803645
-set arrow from 6.000000,5.966667 to 1.000000,5.966667 linecolor rgb 6828053
-set arrow from 0.966667,6.000000 to 1.966667,9.000000 linecolor rgb 6828053
-set arrow from 2.000000,9.033333 to 5.000000,8.033333 linecolor rgb 6828053
-set arrow from 5.033333,8.000000 to 6.033333,6.000000 linecolor rgb 6828053
-set arrow from 1.000000,6.033333 to 6.000000,6.033333 linecolor rgb 1648759
-set arrow from 5.966667,6.000000 to 4.966667,8.000000 linecolor rgb 1648759
-set arrow from 5.000000,7.966667 to 2.000000,8.966667 linecolor rgb 1648759
-set arrow from 2.033333,9.000000 to 1.033333,6.000000 linecolor rgb 1648759
-set arrow from 8.000000,4.966667 to 6.500000,5.966667 linecolor rgb 7508029
-set arrow from 6.466667,6.000000 to 5.966667,7.000000 linecolor rgb 7508029
-set arrow from 6.000000,7.033333 to 8.000000,7.033333 linecolor rgb 7508029
-set arrow from 8.033333,7.000000 to 8.033333,5.000000 linecolor rgb 7508029
-set arrow from 6.500000,6.033333 to 8.000000,5.033333 linecolor rgb 11951161
-set arrow from 7.966667,5.000000 to 7.966667,7.000000 linecolor rgb 11951161
-set arrow from 8.000000,6.966667 to 6.000000,6.966667 linecolor rgb 11951161
-set arrow from 6.033333,7.000000 to 6.533333,6.000000 linecolor rgb 11951161
-set label "C1" at 4.500000,0.800000 rotate by -0.000000 left front
-set label "C2" at 2.700000,1.500000 rotate by 45.022793 left front
-set label "C3" at 5.000000,-0.200000 rotate by -0.000000 left front
-set label "C4" at 5.000000,9.800000 rotate by -0.000000 left front
-set label "C5" at 3.500000,5.800000 rotate by -0.000000 left front
-set label "C6" at 1.700000,7.500000 rotate by 71.601299 left front
-set label "C7" at 6.050000,6.500000 rotate by -63.467079 left front
-set label "C8" at 7.000000,6.800000 rotate by -0.000000 left front
-set label "C(INF)" at -1.000000,5.000000 front
+set xrange[-2.000000:12.000000]
+set yrange[-2.000000:12.000000]
+set arrow from 7.000000,0.966667 to 2.000000,0.966667 linecolor rgb 9127271
+set label "e1" at 4.500000,0.800000 rotate by -0.000000 right front
+set arrow from 1.966667,1.000000 to 2.966667,2.000000 linecolor rgb 9127271
+set label "e2" at 2.300000,1.500000 rotate by 45.022793 right front
+set arrow from 3.000000,2.033333 to 7.000000,3.033333 linecolor rgb 9127271
+set label "e3" at 5.000000,2.700000 rotate by 14.043353 right front
+set arrow from 7.033333,3.000000 to 7.033333,1.000000 linecolor rgb 9127271
+set label "e4" at 7.200000,2.000000 rotate by -90.045585 right front
+set arrow from 2.000000,1.033333 to 7.000000,1.033333 linecolor rgb 8070086
+set label "e5" at 4.500000,1.200000 rotate by 0.000000 right front
+set arrow from 6.966667,1.000000 to 6.966667,3.000000 linecolor rgb 8070086
+set label "e6" at 6.800000,2.000000 rotate by 90.045585 right front
+set arrow from 7.000000,2.966667 to 3.000000,1.966667 linecolor rgb 8070086
+set label "e7" at 5.000000,2.300000 rotate by 14.043353 right front
+set arrow from 3.033333,2.000000 to 2.033333,1.000000 linecolor rgb 8070086
+set label "e8" at 2.700000,1.500000 rotate by 45.022793 right front
+set arrow from 10.000000,-0.033333 to 0.000000,-0.033333 linecolor rgb 3971177
+set label "e9" at 5.000000,-0.200000 rotate by -0.000000 right front
+set arrow from -0.033333,0.000000 to -0.033333,10.000000 linecolor rgb 3971177
+set label "e10" at -0.200000,5.000000 rotate by 90.045585 right front
+set arrow from 0.000000,10.033333 to 10.000000,10.033333 linecolor rgb 3971177
+set label "e11" at 5.000000,10.200000 rotate by 0.000000 right front
+set arrow from 10.033333,10.000000 to 10.033333,0.000000 linecolor rgb 3971177
+set label "e12" at 10.200000,5.000000 rotate by -90.045585 right front
+set arrow from 0.000000,0.033333 to 10.000000,0.033333 linecolor rgb 3360883
+set label "e13" at 5.000000,0.200000 rotate by 0.000000 right front
+set arrow from 9.966667,0.000000 to 9.966667,10.000000 linecolor rgb 3360883
+set label "e14" at 9.800000,5.000000 rotate by 90.045585 right front
+set arrow from 10.000000,9.966667 to 0.000000,9.966667 linecolor rgb 3360883
+set label "e15" at 5.000000,9.800000 rotate by -0.000000 right front
+set arrow from 0.033333,10.000000 to 0.033333,0.000000 linecolor rgb 3360883
+set label "e16" at 0.200000,5.000000 rotate by -90.045585 right front
+set arrow from 6.000000,5.966667 to 1.000000,5.966667 linecolor rgb 11590737
+set label "e17" at 3.500000,5.800000 rotate by -0.000000 right front
+set arrow from 0.966667,6.000000 to 1.966667,9.000000 linecolor rgb 11590737
+set label "e18" at 1.300000,7.500000 rotate by 71.601299 right front
+set arrow from 2.000000,9.033333 to 5.000000,8.033333 linecolor rgb 11590737
+set label "e19" at 3.500000,8.700000 rotate by -18.444286 right front
+set arrow from 5.033333,8.000000 to 6.033333,6.000000 linecolor rgb 11590737
+set label "e20" at 5.700000,7.000000 rotate by -63.467079 right front
+set arrow from 1.000000,6.033333 to 6.000000,6.033333 linecolor rgb 4807935
+set label "e21" at 3.500000,6.200000 rotate by 0.000000 right front
+set arrow from 5.966667,6.000000 to 4.966667,8.000000 linecolor rgb 4807935
+set label "e22" at 5.300000,7.000000 rotate by -63.467079 right front
+set arrow from 5.000000,7.966667 to 2.000000,8.966667 linecolor rgb 4807935
+set label "e23" at 3.500000,8.300000 rotate by -18.444286 right front
+set arrow from 2.033333,9.000000 to 1.033333,6.000000 linecolor rgb 4807935
+set label "e24" at 1.700000,7.500000 rotate by 71.601299 right front
+set arrow from 8.000000,4.966667 to 6.500000,5.966667 linecolor rgb 15242314
+set label "e25" at 7.250000,5.300000 rotate by -33.707132 right front
+set arrow from 6.466667,6.000000 to 5.966667,7.000000 linecolor rgb 15242314
+set label "e26" at 6.050000,6.500000 rotate by -63.467079 right front
+set arrow from 6.000000,7.033333 to 8.000000,7.033333 linecolor rgb 15242314
+set label "e27" at 7.000000,7.200000 rotate by 0.000000 right front
+set arrow from 8.033333,7.000000 to 8.033333,5.000000 linecolor rgb 15242314
+set label "e28" at 8.200000,6.000000 rotate by -90.045585 right front
+set arrow from 6.500000,6.033333 to 8.000000,5.033333 linecolor rgb 5593324
+set label "e29" at 7.250000,5.700000 rotate by -33.707132 right front
+set arrow from 7.966667,5.000000 to 7.966667,7.000000 linecolor rgb 5593324
+set label "e30" at 7.800000,6.000000 rotate by 90.045585 right front
+set arrow from 8.000000,6.966667 to 6.000000,6.966667 linecolor rgb 5593324
+set label "e31" at 7.000000,6.800000 rotate by -0.000000 right front
+set arrow from 6.033333,7.000000 to 6.533333,6.000000 linecolor rgb 5593324
+set label "e32" at 6.450000,6.500000 rotate by -63.467079 right front
+set label "C1" at 4.500000,0.800000 tc rgb 9127271 rotate by -0.000000 left front 
+set label "C2" at 2.700000,1.500000 tc rgb 8070086 rotate by 45.022793 left front 
+set label "C3" at 5.000000,-0.200000 tc rgb 3971177 rotate by -0.000000 left front 
+set label "C4" at 5.000000,9.800000 tc rgb 3360883 rotate by -0.000000 left front 
+set label "C5" at 3.500000,5.800000 tc rgb 11590737 rotate by -0.000000 left front 
+set label "C6" at 1.700000,7.500000 tc rgb 4807935 rotate by 71.601299 left front 
+set label "C7" at 6.050000,6.500000 tc rgb 15242314 rotate by -63.467079 left front 
+set label "C8" at 7.000000,6.800000 tc rgb 5593324 rotate by -0.000000 left front 
+set label "C(INF)" at 6.000000,-1.000000 center front
 plot NaN t ''	

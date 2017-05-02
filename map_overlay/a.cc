@@ -5,7 +5,6 @@
 #define mp make_pair
 #define KCYN  "\x1B[31m"
 #define KWHT  "\x1B[37m"
-int edges_too = 0;
 double x_min=INT_MAX,x_max=-1,y_min=INT_MAX,y_max=-1;
 class edge_record{
 public:
@@ -39,8 +38,8 @@ void print_gui(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 	double xff,yff;
 	x_min -= 1; y_min -=1; x_max += 1; y_max += 1;
 	FILE *fp = fopen("output","w");
-	fprintf(fp,"set xrange[%lf:%lf]\n",x_min,x_max);
-	fprintf(fp,"set yrange[%lf:%lf]\n",y_min,y_max);
+	fprintf(fp,"set xrange[%lf:%lf]\n",x_min-1,x_max+1);
+	fprintf(fp,"set yrange[%lf:%lf]\n",y_min-1,y_max+1);
 	int i = 1;
 	while(1){
 		if(color[i]) i = find(color.begin(),color.end(),0)-color.begin(); // finds index whose color is 0;
@@ -70,8 +69,7 @@ void print_gui(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 		}
 		fprintf(fp,"set arrow from %lf,%lf to %lf,%lf linecolor rgb %d\n",edge_list[i].l.v1.x+xff,edge_list[i].l.v1.y+yff,
 																edge_list[i].l.v2.x+xff,edge_list[i].l.v2.y+yff,cycle_list[edge_list[i].cycle_no].rgb);
-		if(edges_too) fprintf(fp, "set label \"e%d\" at %lf,%lf rotate by %lf left\n",i,((x+x_)/2+6*xff),((y+y_)/2+6*yff),57.3248*atan((y_-y)/(x_-x)));
-
+		fprintf(fp, "set label \"e%d\" at %lf,%lf rotate by %lf right front\n",i,((x+x_)/2+6*xff),((y+y_)/2+6*yff),57.3248*atan((y_-y)/(x_-x)));
 		color[i] = 1;
 		i = edge_list[i].l_next;
 	}
@@ -103,10 +101,10 @@ void print_gui(vector<edge_record> &edge_list, vector<cycle> &cycle_list){
 			if(y < y1 && y_ < y2) yff = -ff;
 			if(y > y1 && y_ > y2) yff = ff;
 		}
-		fprintf(fp, "set label \"C%d\" at %lf,%lf rotate by %lf left front\n",
-					ii,((x+x_)/2+6*xff),((y+y_)/2+6*yff),57.3248*atan((y_-y)/(x_-x)));
+		fprintf(fp, "set label \"C%d\" at %lf,%lf tc rgb %d rotate by %lf left front \n",
+					ii,((x+x_)/2+6*xff),((y+y_)/2+6*yff),cycle_list[ii].rgb,57.3248*atan((y_-y)/(x_-x)));
 	}
-	fprintf(fp, "set label \"C(INF)\" at %lf,%lf front\n",x_min,(y_min+y_max)/2);
+	fprintf(fp, "set label \"C(INF)\" at %lf,%lf center front\n",(x_max-x_min)/2,y_min);
 	fprintf(fp, "plot NaN t ''	\n");
 	fclose(fp);
 	system("./run");
@@ -244,26 +242,27 @@ void dfs(vector<cycle> &cycle_list, int n, vector<int> &color, int space){
 	color[n] = 1;
 	int p;
 	if(n == 0){
-		p  = printf("%sC(INF)%s--",KCYN,KWHT);
+		p  = printf("%sC(INF)%s-->",KCYN,KWHT);
 		p -= 10;
 		for(int i=0;i<cycle_list[n].child_cycle.size();i++){
-			if(i){for(int j=0;j<space+p;j++) putchar(' '); printf("\b|\v\b|");}
+			if(i) printf("\b|\v\b|----->");
 			dfs(cycle_list,cycle_list[n].child_cycle[i],color,space+p);
 		}
 	}
 	else if(cycle_list[n].child_cycle.size()){
-		if(cycle_list[n].conf == 0) p = printf("C(%d)--",n);
+		if(cycle_list[n].conf == 0) p = printf("C(%d)--->",n);
 		else{
-			p = printf("%sC(%d)%s--",KCYN,n,KWHT);
+			p = printf("%sC(%d)%s-->",KCYN,n,KWHT);
 			p-=10;
 		}
 		for(int i=0;i<cycle_list[n].child_cycle.size();i++){
-			if(i){for(int j=0;j<space+p;j++) putchar(' '); printf("\b|\v\b|");}
+			if(i) printf("\b|\v\b|----->");
 			dfs(cycle_list,cycle_list[n].child_cycle[i],color,space+p);
 		}
 	}
 	else{
-		printf("C(%d)\n",n);
+		if(cycle_list[n].conf == 1) printf("%sC(%d)%s\n",KCYN,n,KWHT);
+		else	printf("C(%d)\n",n);
 	}
 }
 
@@ -275,9 +274,8 @@ void print_half_edge_list(vector<edge_record> &edge_list){
 }
 
 int main(int argc, char* argv[]){
-	if(argc < 2){printf("usage %s <input_file> [<edge_names(1/0)>]\n",argv[0]); exit(1);}
-	if(argc == 3) edges_too = atoi(argv[2]);
-	srand(time(NULL)); //seed random numbers...
+	if(argc < 2){printf("usage %s <input_file> \n",argv[0]); exit(1);}
+	//srand(time(NULL)); //seed random numbers...
 	printf("%d\n",getpid());
 	FILE *fp = fopen(argv[1],"r");
 	vector<edge_record> edge_list(1);
@@ -307,6 +305,7 @@ int main(int argc, char* argv[]){
 		int n =  edge_list.size();
 		if(twin >= n || prev >= n || next >= n){
 			printf("edge no %d in 'input' file is wrong...!\n",i);
+			printf("edge no should start from '1' and they should be continuous.\n" );
 			exit(1);
 		}
 	}
@@ -317,13 +316,13 @@ int main(int argc, char* argv[]){
 	find_face_graph(edge_list,cycle_list);
 	vector<int> color(cycle_list.size(),0);
 	//prints face-graphs...
-	cout<<"\n\n\nface graph is:\n\n"<<endl;
+	cout<<"\n\n\nFACE GRAPH  is:\n\n"<<endl;
 	for(int i=0;i<cycle_list.size();i++) if(color[i] == 0 && cycle_list[i].child_cycle.size()) dfs(cycle_list,i,color,0);
 	for(int i=0;i<cycle_list.size();i++) if(color[i] == 0) dfs(cycle_list,i,color,0);
 	int f=0;
 	for(int i=0;i<cycle_list.size();i++) if(cycle_list[i].conf) f++;
 	printf("So total no of faces are %d\n",f+1);
 	printf("Every connected component represents 1 face\n");
-	printf("Colored cycles(RED) in each connected component is Inner Cycle that contains holes\n");
+	printf("Colored cycles(RED) in each connected component is Inner Cycle represents a FACE that may contains holes\n");
 	return 0;
 }

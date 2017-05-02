@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -std=c++17
+FLAGS = -std=c++11
 
 a:	a.o cgal_basic.o
 	$(CC) $(FLAGS) a.o cgal_basic.o -o a
